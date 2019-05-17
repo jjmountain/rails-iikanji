@@ -3,6 +3,7 @@ class KanjiCardsController < ApplicationController
 
   def index
     @cards = KanjiCard.all
+    @kanji = Kanji.where(jlpt: 2)
   end
 
   def show

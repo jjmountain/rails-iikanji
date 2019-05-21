@@ -1,11 +1,7 @@
 class KanjiCardsController < ApplicationController
 
   def index
-    if params[:query].present?
-      @kanji = Kanji.where(jlpt: params[:query])
-    else
-      @kanji = Kanji.all
-    end
+
   end
 
   # def show

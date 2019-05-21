@@ -1,1 +1,18 @@
-Hi I'm the Kanji cards Index
+<h1> Kanji Explorer </h1>
+<% if params[:query].present? %>
+  <h2> Search term: <%= params[:query] %> </h2>
+<% end %>
+<%= form_tag kanji_cards_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Enter JLPT Level"
+  %>
+<% end %>
+<% @kanji.each do |kanji| %>
+  <%= link_to kanji.character, kanji_path(kanji), class: 'kanji_index' %>
+<% end %>
+
+
+
+

@@ -3,6 +3,7 @@ class KanjiCard < ApplicationRecord
   belongs_to :kanji
   validates :kanji_id, uniqueness: true
 
+
   MAX_GRADE = 5
     # 0 = really hard to answer / 5 = really easy to answer
     # D_EF[q] = (0.1 - (MAX_GRADE - grade) * (0.08 + (MAX_GRADE - grade) * 0.02))

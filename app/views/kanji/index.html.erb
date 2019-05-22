@@ -1,37 +1,38 @@
-<h1> Kanji Explorer </h1>
-<p>
-  Here are some things you can type into the search box to look for Kanji and examples.
-</p>
-<ul>
-  <li>
-    <em>Kanji</em> - Input kanji directly to find characters containing these kanji, or associated radicals
-  </li>
-  <li>
-    <em>Stories</em> - Stories from Koohii
-  </li>
-  <li>
-    <em>Heisig Keyword</em> - Keywords for Heisig's book "Remembering the Kanji"
-  </li>
-  <li>
-    <em>Kunyomi or Onyomi readings</em> - Input the reading in Japanese hiragana or katakana for onyomi/kunyomi respectively
-  </li>
-</ul>
-
-<% if params[:query].present? %>
-<% end %>
-<%= form_tag kanji_index_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search for a kanji by keyword, Japanese, or Koohii story"
-  %>
-<% end %>
-<div class="kanji-results">
-<% @kanji.each do |kanji| %>
-  <%= link_to kanji.character, kanji_path(kanji), class: 'kanji_index' %>
-<% end %>
+<div class="kanji-explorer">
+  <h1> 
+    Kanji Explorer 
+  </h1>
+  <p>
+    Here are some things you can type into the search box to look for Kanji and examples.
+  </p>
+  <ul>
+    <li>
+      <em>Kanji</em> - Input kanji directly to find characters containing these kanji, or associated radicals
+    </li>
+    <li>
+      <em>Stories</em> - Stories from Koohii
+    </li>
+    <li>
+      <em>Heisig Keyword</em> - Keywords for Heisig's book "Remembering the Kanji"
+    </li>
+    <li>
+      <em>Kunyomi or Onyomi readings</em> - Input the reading in Japanese hiragana or katakana for onyomi/kunyomi respectively
+    </li>
+  </ul>
+  <%= render 'shared/search_form' %>
 </div>
 
-
-
+<div class="kanji-results">
+  <div class="row">
+  <% @kanji.each do |kanji| %>
+    <div class="col-md-3">
+      <%= link_to kanji_path(kanji), class: 'kanji_box' do %>
+        <div class="kanji_index">
+          <%= kanji.character %>
+        </div> 
+      <% end %>    
+    </div>
+  <% end %>
+  </div>
+</div>
 

@@ -1,5 +1,6 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import "colors";
 
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
@@ -15,7 +16,34 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
 
-.kanji_index {
-  font-size: 24px;
-  color: black;
+.kanji_box {
+	display: flex;
+	border: 1px solid black;
+	justify-content: center;
+	align-items: center;
+	width: 8rem;
+	height: 8rem;
+	margin: 2rem;
+	text-decoration: none !important;
 }
+
+.kanji_box:hover {
+	background-color: #38b6ff5c;
+}
+
+.kanji_index {
+	font-size: 3rem;
+	text-decoration: none !important;
+	color: $gray;
+	font-weight: 100;
+}
+
+.kanji_index {
+	a:hover, a:visited, a:link, a:active
+  {
+    text-decoration: none !important;
+    color: $blue;
+  }
+}
+
+

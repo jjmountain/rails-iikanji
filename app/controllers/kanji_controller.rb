@@ -12,6 +12,10 @@ class KanjiController < ApplicationController
         OR keyword ILIKE :query \
         "
       @kanji = Kanji.where(sql_query, query: "%#{params[:query]}%")
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
       @kanji = Kanji.all
     end

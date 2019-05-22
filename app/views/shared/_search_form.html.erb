@@ -1,4 +1,4 @@
-<%= simple_form_for :search, url: kanji_index_path, method: :get do |f| %>
+<%= simple_form_for :search, url: kanji_index_path, remote: true, method: :get do |f| %>
   <fieldset class="form-group">
   	<legend class="col-form-label pt-0">JLPT level</legend>
   	<div class="custom-control custom-checkbox custom-control-inline">

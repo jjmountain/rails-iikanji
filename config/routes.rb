@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   delete "kanji_cards/:id", to: "kanji_cards#destroy"
 
   resources :kanji, only: [:index, :show]
+  resources :searches
 
 end
+	
